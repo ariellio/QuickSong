@@ -19,16 +19,24 @@ QuickSong is an interactive app where users can customize a sample to play, and 
  
 ## Technologies
   * Web Audio API
+    *  To access audio and be able to customize how it is played. May substitute completely by using Howler.js instead.
 
   * FreeSound API
+    * Using to access samples for users to pick an instrument and a BPM
 
   * Javascript
-
+    * To build an interactive front end application
+    
   * CSS 
+    * To style the website appropriately 
+
 
   * HTML
+    * To structure the information appropriately
 
-  * Howler
+
+  * Howler.js
+    *  To access audio files easily and to be able to play instruments by BPM
 
 ## Wireframe
 
