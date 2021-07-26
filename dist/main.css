@@ -1,4 +1,79 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+.drums__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
+}
 
+.snare {
+  display: flex;
+}
+
+img {
+  background: tan;
+  object-fit: contain;
+}
+
+.title {
+  border: solid red;
+}
+
+.snare__bar__container {
+  display: flex;
+}
+
+.snare__bar__container > div {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: solid tan;
+}
+
+.kick {
+  display: flex;
+}
+
+.kick__bar__container {
+  display: flex;
+}
+
+.kick__bar__container > div {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: solid tan;
+}
+
+.hi-hat {
+  display: flex;
+}
+
+.hi-hat__bar__container {
+  display: flex;
+}
+
+.hi-hat__bar__container > div {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: solid tan;
+}
+
+.clap {
+  display: flex;
+}
+
+.clap__bar__container {
+  display: flex;
+}
+
+.clap__bar__container > div {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: solid tan;
+}
