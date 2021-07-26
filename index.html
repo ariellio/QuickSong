@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
-    <script src="./dist/main.js"></script>
-    <title>Project Name</title>
+    <title>QuickSong</title>
 </head>
 
 <body>
     <div class="drums__container">
+        <!-- <button class="sound__test">
+            Play sound
+        </button> -->
         <div class="snare">
             <div class="title">
-                <img src="./dist/assets/icons/snare.png" height="60px" alt="">
+                <img id="snare__sound" class="instrument__sound" src="./dist/assets/icons/snare.png" height="60px" alt="">
             </div>
             <div class="snare__bar__container">
-
                 <div class="bar__one">
                     bar 1
                 </div>
@@ -34,7 +35,7 @@
         </div>
         <div class="kick">
             <div class="title">
-                <img src="./dist/assets/icons/kick.png" height="60px" alt="">
+                <img id="kick__sound" class="instrument__sound" src="./dist/assets/icons/kick.png" height="60px" alt="">
             </div>
             <div class="kick__bar__container">
                 <div class="bar__one">
@@ -53,7 +54,7 @@
         </div>
         <div class="hi-hat">
             <div class="title">
-                <img src="./dist/assets/icons/hihat.png" height="60px" alt="">
+                <img  id="hihat__sound" class="instrument__sound" src="./dist/assets/icons/hihat.png" height="60px" alt="">
             </div>
             <div class="hi-hat__bar__container">
                 <div class="bar__one">
@@ -72,7 +73,7 @@
         </div>
         <div class="clap">
             <div class="title">
-                <img src="./dist/assets/icons/clap.png" height="60px" alt="">
+                <img id="clap__sound" class="instrument__sound" src="./dist/assets/icons/clap.png" height="60px" alt="">
             </div>
             <div class="clap__bar__container">
                 <div class="bar__one">
@@ -90,6 +91,8 @@
             </div>
         </div>
     </div>
+    <script src="howler.min.js"></script>
+    <script src="./dist/main.js"></script>
 </body>
 
 </html>

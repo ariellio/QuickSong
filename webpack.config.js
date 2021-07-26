@@ -1,6 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+var SRC = path.resolve(__dirname, 'src/main/js');
 const config = {
   entry: [
     path.resolve(__dirname, 'src', 'index.js'),
@@ -27,6 +27,11 @@ const config = {
           },
           'sass-loader', // compiles sass to css
         ]
+      },
+      {
+        test: /\.wav$/,
+        // include: SRC,
+        loader: 'file-loader'
       }
     ],
   },
