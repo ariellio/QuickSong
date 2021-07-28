@@ -18,6 +18,10 @@ img {
   object-fit: contain;
 }
 
+img:hover {
+  cursor: pointer;
+}
+
 .title {
   border: solid red;
 }

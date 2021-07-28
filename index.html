@@ -11,46 +11,34 @@
 
 <body>
     <div class="drums__container">
-        <!-- <button class="sound__test">
-            Play sound
-        </button> -->
+        <label for="bpm">BPM</label>
+        <input name="bpm" id="bpm" type="range" min="60" max="180" value="120" step="1" />
+        <span id="bpmval">120</span>
         <div class="snare">
             <div class="title">
                 <img id="snare__sound" class="instrument__sound" src="./dist/assets/icons/snare.png" height="60px" alt="">
             </div>
             <div class="snare__bar__container">
-                <div class="bar__one">
-                    bar 1
-                </div>
-                <div class="bar__two">
-                    bar 2
-                </div>
-                <div class="bar__three">
-                    bar 3
-                </div>
-                <div class="bar__four">
-                    bar 4
-                </div>
+                <input type="checkbox" id="snare"  class="one">
+                <input type="checkbox" id="snare" class="two">
+                <input type="checkbox" id="snare" class="three">
+                <input type="checkbox" id="snare" class="four">
             </div>
+            <button class="snare__play">Play</button>
+            <button class="snare__stop">Stop</button>
         </div>
         <div class="kick">
             <div class="title">
                 <img id="kick__sound" class="instrument__sound" src="./dist/assets/icons/kick.png" height="60px" alt="">
             </div>
             <div class="kick__bar__container">
-                <div class="bar__one">
-                    bar 1
-                </div>
-                <div class="bar__two">
-                    bar 2
-                </div>
-                <div class="bar__three">
-                    bar 3
-                </div>
-                <div class="bar__four">
-                    bar 4
-                </div>
+                <input type="checkbox" id="kick"  class="one">
+                <input type="checkbox" id="kick" class="two">
+                <input type="checkbox" id="kick" class="three">
+                <input type="checkbox" id="kick" class="four">
             </div>
+            <button class="kick__play">Play</button>
+            <button class="kick__stop">Stop</button>
         </div>
         <div class="hi-hat">
             <div class="title">
