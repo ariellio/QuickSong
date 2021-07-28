@@ -1,7 +1,8 @@
 import * as Tone from 'tone';
 import {song} from './instruments.js';
-// import kick from '../dist/assets/sounds/boom-bap-kick.wav'
 import snare from '../dist/assets/sounds/snare-chop_C_major.wav';
+import hihat from '../dist/assets/sounds/hi-hat-africa_C_minor.wav';
+import clap from '../dist/assets/sounds/dry-short-clap.wav';
 import { Time } from 'tone';
 
 
@@ -10,8 +11,8 @@ import { Time } from 'tone';
 var AudioContext = window.AudioContext || window.webkitAudioContext;
 var audioCtx = new AudioContext();
 
-//LOOPING KICK
-let getkickPlay = document.getElementsByClassName("kick__play") 
+//PLAY
+let getkickPlay = document.getElementsByClassName("play__button") 
 export let loopKick = getkickPlay[0].addEventListener('click', () => {
         if (Tone.context.state !== 'running') {
             Tone.context.resume();
@@ -19,11 +20,28 @@ export let loopKick = getkickPlay[0].addEventListener('click', () => {
 
         //// ACCESSING HTML ELEMENTS
         const kickRow = document.getElementsByClassName("kick__bar__container")[0].children;
+        const snareRow = document.getElementsByClassName("snare__bar__container")[0].children;
+        const hihatRow = document.getElementsByClassName("hihat__bar__container")[0].children;
+        const clapRow = document.getElementsByClassName("clap__bar__container")[0].children;
 
-        //CREATING INSTRUMENT
+        //CREATING INSTRUMENTS
         const kick = new Tone.MembraneSynth().toDestination();
-        
+        //--//
+        const snareInstrument  = new Tone.Sampler({
+            "c2" : snare
+        }).toDestination()
+        //--//
+        const hihatInstrument  = new Tone.Sampler({
+            "c2" : hihat
+        }).toDestination()
+        //--//
+        const clapInstrument  = new Tone.Sampler({
+            "c2" : clap
+        }).toDestination()
 
+        // INSTRUMENT PLAYBACK BELOW (KICK, SNARE, HIHAT, CLAP)
+
+        //KICK
         Tone.Transport.scheduleRepeat(time => {
             repeat(time)
         }, "4n");
@@ -47,33 +65,7 @@ export let loopKick = getkickPlay[0].addEventListener('click', () => {
         Tone.Transport.start();
 
 
-    //STOP KICK
-    let stopToneKick = document.getElementsByClassName("kick__stop") 
-    let stoppedKick = stopToneKick.forEach(tone => {
-    tone.addEventListener('click', () => {
-        Tone.Transport.stop();
-    })
-})
-})
-const snareInstrument  = new Tone.Sampler({
-    "c2" : snare
-}).toDestination()
-//LOOPING SNARE
-let getSnarePlay = document.getElementsByClassName("snare__play") 
-export let loopSnare = getSnarePlay[0].addEventListener('click', () => {
-        if (Tone.context.state !== 'running') {
-            Tone.context.resume();
-        } 
-
-        //// ACCESSING HTML ELEMENTS
-        const snareRow = document.getElementsByClassName("snare__bar__container")[0].children;
-        debugger
-        //CREATING INSTRUMENT
-        const snareInstrument  = new Tone.Sampler({
-            "c2" : snare
-        }).toDestination()
-        
-        // snareInstrument.triggerAttackRelease("c2", "1m")
+        // SNARE
         Tone.ToneAudioBuffer.loaded().then(() =>{
                     Tone.Transport.scheduleRepeat(time => {
                         repeat(time)
@@ -97,38 +89,69 @@ export let loopSnare = getSnarePlay[0].addEventListener('click', () => {
                     }
                     Tone.Transport.start();  
         });
+
+    
+    
+        // HIHAT
+        Tone.ToneAudioBuffer.loaded().then(() =>{
+                    Tone.Transport.scheduleRepeat(time => {
+                        repeat(time)
+                    }, "4n");
+                    
+                    function repeat(time){
+                        let beat = Tone.Transport.position.split(":")[1]
+                        if (hihatRow[0].checked && beat === "0") {
+                            hihatInstrument.triggerAttackRelease("c2", "1m")
+                        }
+                        if (hihatRow[1].checked && beat === "1") {
+                            hihatInstrument.triggerAttackRelease("c2", "1m")
+                        }
+                        if (hihatRow[2].checked && beat === "2") {
+                            hihatInstrument.triggerAttackRelease("c2", "1m")
+                        }
+                        if (hihatRow[3].checked && beat === "3") {
+                            hihatInstrument.triggerAttackRelease("c2", "1m")
+                        }
+            
+                    }
+                    Tone.Transport.start();  
+        });
+
+       // CLAP 
+        Tone.ToneAudioBuffer.loaded().then(() =>{
+                    Tone.Transport.scheduleRepeat(time => {
+                        repeat(time)
+                    }, "4n");
+                    
+                    function repeat(time){
+                        let beat = Tone.Transport.position.split(":")[1]
+                        if (clapRow[0].checked && beat === "0") {
+                            clapInstrument.triggerAttackRelease("c2", "1m")
+                        }
+                        if (clapRow[1].checked && beat === "1") {
+                            clapInstrument.triggerAttackRelease("c2", "1m")
+                        }
+                        if (clapRow[2].checked && beat === "2") {
+                            clapInstrument.triggerAttackRelease("c2", "1m")
+                        }
+                        if (clapRow[3].checked && beat === "3") {
+                            clapInstrument.triggerAttackRelease("c2", "1m")
+                        }
+            
+                    }
+                    Tone.Transport.start();  
+        });
         
-        // STOP SNARE    
-        let stopSnare = document.getElementsByClassName("snare__stop") 
-            let stoppedSnare = stopSnare.forEach(snareButton => {
-                debugger
-                snareButton.addEventListener('click', () => {
-                    debugger
-                    Tone.Transport.stop
-                })
-            })
+
+    //STOP PLAYBACK
+    let stopPlayback = document.getElementsByClassName("stop__button") 
+    let stoppedPlayback = stopPlayback.forEach(playback => {
+    playback.addEventListener('click', () => {
+        Tone.Transport.stop();
+    })
+    
+    })
 })
-
-
-
-//PLAY
-// export let loop = new Tone.Loop(song, '4n');
-// let toneTest = document.getElementsByClassName("kick__play") 
-// debugger
-// export let loopBpm = toneTest[0].addEventListener('click', () => {
-//         if (Tone.context.state !== 'running') {
-//             Tone.context.resume();
-//         } 
-//         Tone.Transport.stop();
-//         loop.stop()
-//         //start playing sound
-//         Tone.Transport.start();
-//         loop.start()
-//     })
-
-
-
-
 
 //CHANGE BPM
     let tempo = 60.0;

@@ -1,12 +1,14 @@
 import {Howl, Howler} from "howler";
 import * as Tone from 'tone';
 import {song} from './instruments.js';
-import {stoppedKick, stoppedSnare, loopKick,loopSnare, loopBpm} from './bpm';
+import {stoppedKick, stoppedSnare, loopKick,loopSnare, loopHihat, loopClap, loopBpm} from './bpm';
 
 document.addEventListener("DOMContentLoaded", () => {
     //tonetest is bpm
     loopKick
     loopSnare
+    loopHihat
+    loopClap
     loopBpm
     
     //STOP BPM
