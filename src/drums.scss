@@ -1,79 +1,110 @@
+.sequencer__container {
+  margin-top: 200px;
+}
+
 .drums__container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 300px;
+  background: #736973;
 }
 
-.snare {
+.kick__bar__container {
   display: flex;
-  // justify-content: space-around;
-  // flex-direction: column;
+  justify-content: space-around;
+  flex: 7;
+  align-items: center;
 }
-
-img {
-  background: tan;
-  object-fit: contain;
-}
-
-img:hover {
-  cursor: pointer;
-}
-
-.title {
-  border: solid red;
-}
-
 .snare__bar__container {
   display: flex;
+  justify-content: space-around;
+  flex: 7;
+  align-items: center;
+}
+.hihat__bar__container {
+  display: flex;
+  justify-content: space-around;
+  flex: 7;
+  align-items: center;
+}
+.clap__bar__container {
+  display: flex;
+  justify-content: space-around;
+  flex: 7;
+  align-items: center;
+}
+
+.kick__bar__container > div {
+  border: 2px solid #181818;
+  background-color: #202020;
+  border-radius: 15px;
+  margin: 1px;
+  padding: 20px;
+  margin-top: 10px;
+  width: 31px;
+  height: 31px;
 }
 .snare__bar__container > div {
-  display: flex;
-  flex-direction: column;
+  border: 2px solid #181818;
+  background-color: #202020;
+  border-radius: 15px;
+  margin: 1px;
   padding: 20px;
-  border: solid tan;
+  margin-top: 10px;
+  width: 31px;
+  height: 31px;
+}
+.hihat__bar__container > div {
+  border: 2px solid #181818;
+  background-color: #202020;
+  border-radius: 15px;
+  margin: 1px;
+  padding: 20px;
+  margin-top: 10px;
+  width: 31px;
+  height: 31px;
+}
+.clap__bar__container > div {
+  border: 2px solid #181818;
+  background-color: #202020;
+  border-radius: 15px;
+  margin: 1px;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 31px;
+  height: 31px;
 }
 
 .kick {
   display: flex;
-}
-.kick__bar__container {
-  display: flex;
-}
-
-.kick__bar__container > div {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border: solid tan;
-}
-.hi-hat {
-  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.hi-hat__bar__container {
+.snare {
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
-
-.hi-hat__bar__container > div {
+.hihat {
   display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border: solid tan;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
-
 .clap {
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.clap__bar__container {
-  display: flex;
+.title {
+  flex: 1;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
-.clap__bar__container > div {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border: solid tan;
+body {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
 }

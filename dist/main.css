@@ -1,83 +1,153 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+.sequencer__container {
+  margin-top: 200px;
+}
+
 .drums__container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 300px;
-}
-
-.snare {
-  display: flex;
-}
-
-img {
-  background: tan;
-  object-fit: contain;
-}
-
-img:hover {
-  cursor: pointer;
-}
-
-.title {
-  border: solid red;
-}
-
-.snare__bar__container {
-  display: flex;
-}
-
-.snare__bar__container > div {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border: solid tan;
-}
-
-.kick {
-  display: flex;
+  background: #736973;
 }
 
 .kick__bar__container {
   display: flex;
+  justify-content: space-around;
+  flex: 7;
+  align-items: center;
 }
 
-.kick__bar__container > div {
+.snare__bar__container {
   display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border: solid tan;
+  justify-content: space-around;
+  flex: 7;
+  align-items: center;
 }
 
-.hi-hat {
+.hihat__bar__container {
   display: flex;
-}
-
-.hi-hat__bar__container {
-  display: flex;
-}
-
-.hi-hat__bar__container > div {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border: solid tan;
-}
-
-.clap {
-  display: flex;
+  justify-content: space-around;
+  flex: 7;
+  align-items: center;
 }
 
 .clap__bar__container {
   display: flex;
+  justify-content: space-around;
+  flex: 7;
+  align-items: center;
+}
+
+.kick__bar__container > div {
+  border: 2px solid #181818;
+  background-color: #202020;
+  border-radius: 15px;
+  margin: 1px;
+  padding: 20px;
+  margin-top: 10px;
+  width: 31px;
+  height: 31px;
+}
+
+.snare__bar__container > div {
+  border: 2px solid #181818;
+  background-color: #202020;
+  border-radius: 15px;
+  margin: 1px;
+  padding: 20px;
+  margin-top: 10px;
+  width: 31px;
+  height: 31px;
+}
+
+.hihat__bar__container > div {
+  border: 2px solid #181818;
+  background-color: #202020;
+  border-radius: 15px;
+  margin: 1px;
+  padding: 20px;
+  margin-top: 10px;
+  width: 31px;
+  height: 31px;
 }
 
 .clap__bar__container > div {
-  display: flex;
-  flex-direction: column;
+  border: 2px solid #181818;
+  background-color: #202020;
+  border-radius: 15px;
+  margin: 1px;
   padding: 20px;
-  border: solid tan;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 31px;
+  height: 31px;
+}
+
+.kick {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.snare {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.hihat {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.clap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.title {
+  flex: 1;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.bpm__controls {
+  border: solid;
+  border-width: 0.5px;
+  padding: 10px;
+}
+
+.play__stop__buttons {
+  padding: 12px;
+  border: solid;
+  border-width: 0.5px;
+}
+
+.play__button {
+  background: white;
+  border: none;
+}
+
+.stop__button {
+  background: white;
+  border: none;
+}
+
+body {
+  background-color: #d3f0f2;
 }

@@ -11,18 +11,34 @@ import { Time } from 'tone';
 var AudioContext = window.AudioContext || window.webkitAudioContext;
 var audioCtx = new AudioContext();
 
+const kickDiv = document.getElementsByClassName("kick__bar");
+// console.log(kickD)
+kickDiv.forEach(singleKick => {
+    singleKick.addEventListener('click', () => {
+        if (singleKick.dataset.active === "true") {
+            singleKick.dataset.active = "false"
+            singleKick.style.backgroundColor = "#202020"
+        } else if (singleKick.dataset.active === "false"){
+            singleKick.dataset.active = "true"
+            singleKick.style.backgroundColor = "red"
+        }
+
+    })
+})
+
+
 //PLAY
-let getkickPlay = document.getElementsByClassName("play__button") 
-export let loopKick = getkickPlay[0].addEventListener('click', () => {
+let getPlay = document.getElementsByClassName("play__button") 
+export let loopKick = getPlay[0].addEventListener('click', () => {
         if (Tone.context.state !== 'running') {
             Tone.context.resume();
         } 
 
         //// ACCESSING HTML ELEMENTS
-        const kickRow = document.getElementsByClassName("kick__bar__container")[0].children;
-        const snareRow = document.getElementsByClassName("snare__bar__container")[0].children;
-        const hihatRow = document.getElementsByClassName("hihat__bar__container")[0].children;
-        const clapRow = document.getElementsByClassName("clap__bar__container")[0].children;
+        const kickRow = document.getElementsByClassName("kick__bar__container")[0];
+        // const snareRow = document.getElementsByClassName("snare__bar__container")[0].children;
+        // const hihatRow = document.getElementsByClassName("hihat__bar__container")[0].children;
+        // const clapRow = document.getElementsByClassName("clap__bar__container")[0].children;
 
         //CREATING INSTRUMENTS
         const kick = new Tone.MembraneSynth().toDestination();
@@ -45,27 +61,35 @@ export let loopKick = getkickPlay[0].addEventListener('click', () => {
         Tone.Transport.scheduleRepeat(time => {
             repeat(time)
         }, "4n");
+
+       
         
         function repeat(time){
             let beat = Tone.Transport.position.split(":")[1]
-            if (kickRow[0].checked && beat === "0") {
+            if (kickDiv[0].dataset.active === "true" && beat === "0" && currentState !== "running") {
                 kick.triggerAttackRelease("c1", "1m", time)
             }
-            if (kickRow[1].checked && beat === "1") {
+            if (kickDiv[1].dataset.active === "true" && beat === "1" && currentState !== "running") {
                 kick.triggerAttackRelease("c1", "1m", time)
             }
-            if (kickRow[2].checked && beat === "2") {
+            if (kickDiv[2].dataset.active === "true" && beat === "2" && currentState !== "running") {
                 kick.triggerAttackRelease("c1", "1m", time)
             }
-            if (kickRow[3].checked && beat === "3") {
+            if (kickDiv[3].dataset.active === "true" && beat === "3" && currentState !== "running") {
                 kick.triggerAttackRelease("c1", "1m", time)
             }
+
 
         }
+
         Tone.Transport.start();
 
+        let currentState = Tone.context.state
 
-        // SNARE
+
+
+
+        SNARE
         Tone.ToneAudioBuffer.loaded().then(() =>{
                     Tone.Transport.scheduleRepeat(time => {
                         repeat(time)
@@ -73,16 +97,16 @@ export let loopKick = getkickPlay[0].addEventListener('click', () => {
                     
                     function repeat(time){
                         let beat = Tone.Transport.position.split(":")[1]
-                        if (snareRow[0].checked && beat === "0") {
+                        if (snareRow[0].checked && beat === "0" && currentState !== "running") {
                             snareInstrument.triggerAttackRelease("c2", "1m")
                         }
-                        if (snareRow[1].checked && beat === "1") {
+                        if (snareRow[1].checked && beat === "1" && currentState !== "running") {
                             snareInstrument.triggerAttackRelease("c2", "1m")
                         }
-                        if (snareRow[2].checked && beat === "2") {
+                        if (snareRow[2].checked && beat === "2" && currentState !== "running") {
                             snareInstrument.triggerAttackRelease("c2", "1m")
                         }
-                        if (snareRow[3].checked && beat === "3") {
+                        if (snareRow[3].checked && beat === "3" && currentState !== "running") {
                             snareInstrument.triggerAttackRelease("c2", "1m")
                         }
             
@@ -92,55 +116,55 @@ export let loopKick = getkickPlay[0].addEventListener('click', () => {
 
     
     
-        // HIHAT
-        Tone.ToneAudioBuffer.loaded().then(() =>{
-                    Tone.Transport.scheduleRepeat(time => {
-                        repeat(time)
-                    }, "4n");
+    //     // HIHAT
+    //     Tone.ToneAudioBuffer.loaded().then(() =>{
+    //                 Tone.Transport.scheduleRepeat(time => {
+    //                     repeat(time)
+    //                 }, "4n");
                     
-                    function repeat(time){
-                        let beat = Tone.Transport.position.split(":")[1]
-                        if (hihatRow[0].checked && beat === "0") {
-                            hihatInstrument.triggerAttackRelease("c2", "1m")
-                        }
-                        if (hihatRow[1].checked && beat === "1") {
-                            hihatInstrument.triggerAttackRelease("c2", "1m")
-                        }
-                        if (hihatRow[2].checked && beat === "2") {
-                            hihatInstrument.triggerAttackRelease("c2", "1m")
-                        }
-                        if (hihatRow[3].checked && beat === "3") {
-                            hihatInstrument.triggerAttackRelease("c2", "1m")
-                        }
+    //                 function repeat(time){
+    //                     let beat = Tone.Transport.position.split(":")[1]
+    //                     if (hihatRow[0].checked && beat === "0" && currentState !== "running" ) {
+    //                         hihatInstrument.triggerAttackRelease("c2", "1m")
+    //                     }
+    //                     if (hihatRow[1].checked && beat === "1" && currentState !== "running" ) {
+    //                         hihatInstrument.triggerAttackRelease("c2", "1m")
+    //                     }
+    //                     if (hihatRow[2].checked && beat === "2" && currentState !== "running" ) {
+    //                         hihatInstrument.triggerAttackRelease("c2", "1m")
+    //                     }
+    //                     if (hihatRow[3].checked && beat === "3" && currentState !== "running" ) {
+    //                         hihatInstrument.triggerAttackRelease("c2", "1m")
+    //                     }
             
-                    }
-                    Tone.Transport.start();  
-        });
+    //                 }
+    //                 Tone.Transport.start();  
+    //     });
 
-       // CLAP 
-        Tone.ToneAudioBuffer.loaded().then(() =>{
-                    Tone.Transport.scheduleRepeat(time => {
-                        repeat(time)
-                    }, "4n");
+    //    // CLAP 
+    //     Tone.ToneAudioBuffer.loaded().then(() =>{
+    //                 Tone.Transport.scheduleRepeat(time => {
+    //                     repeat(time)
+    //                 }, "4n");
                     
-                    function repeat(time){
-                        let beat = Tone.Transport.position.split(":")[1]
-                        if (clapRow[0].checked && beat === "0") {
-                            clapInstrument.triggerAttackRelease("c2", "1m")
-                        }
-                        if (clapRow[1].checked && beat === "1") {
-                            clapInstrument.triggerAttackRelease("c2", "1m")
-                        }
-                        if (clapRow[2].checked && beat === "2") {
-                            clapInstrument.triggerAttackRelease("c2", "1m")
-                        }
-                        if (clapRow[3].checked && beat === "3") {
-                            clapInstrument.triggerAttackRelease("c2", "1m")
-                        }
+    //                 function repeat(time){
+    //                     let beat = Tone.Transport.position.split(":")[1]
+    //                     if (clapRow[0].checked && beat === "0" && currentState !== "running") {
+    //                         clapInstrument.triggerAttackRelease("c2", "1m")
+    //                     }
+    //                     if (clapRow[1].checked && beat === "1" && currentState !== "running") {
+    //                         clapInstrument.triggerAttackRelease("c2", "1m")
+    //                     }
+    //                     if (clapRow[2].checked && beat === "2" && currentState !== "running") {
+    //                         clapInstrument.triggerAttackRelease("c2", "1m")
+    //                     }
+    //                     if (clapRow[3].checked && beat === "3" && currentState !== "running") {
+    //                         clapInstrument.triggerAttackRelease("c2", "1m")
+    //                     }
             
-                    }
-                    Tone.Transport.start();  
-        });
+    //                 }
+    //                 Tone.Transport.start();  
+    //     });
         
 
     //STOP PLAYBACK
@@ -149,7 +173,7 @@ export let loopKick = getkickPlay[0].addEventListener('click', () => {
     playback.addEventListener('click', () => {
         Tone.Transport.stop();
     })
-    
+
     })
 })
 

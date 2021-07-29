@@ -1,0 +1,26 @@
+.controls {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.bpm__controls {
+  border: solid;
+  border-width: 0.5px;
+  padding: 10px;
+}
+
+.play__stop__buttons {
+  padding: 12px;
+  border: solid;
+  border-width: 0.5px;
+}
+
+.play__button {
+  background: white;
+  border: none;
+}
+.stop__button {
+  background: white;
+  border: none;
+}

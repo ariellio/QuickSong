@@ -6,59 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    
     <title>QuickSong</title>
 </head>
 
 <body>
-    <div class="drums__container">
-        <label for="bpm">BPM</label>
-        <input name="bpm" id="bpm" type="range" min="60" max="180" value="120" step="1" />
-        <span id="bpmval">120</span>
-        <div class="snare">
-            <div class="title">
-                <img id="snare__sound" class="instrument__sound" src="./dist/assets/icons/snare.png" height="60px" alt="">
+    <div class="sequencer__container">
+        <div class="controls">
+            <div class="bpm__controls">
+                <label for="bpm">BPM</label>
+                <input name="bpm" id="bpm" type="range" min="60" max="180" value="120" step="1" />
+                <span id="bpmval">120</span>
             </div>
-            <div class="snare__bar__container">
-                <input type="checkbox" id="snare"  class="one">
-                <input type="checkbox" id="snare" class="two">
-                <input type="checkbox" id="snare" class="three">
-                <input type="checkbox" id="snare" class="four">
-            </div>
-        </div>
-        <div class="kick">
-            <div class="title">
-                <img id="kick__sound" class="instrument__sound" src="./dist/assets/icons/kick.png" height="60px" alt="">
-            </div>
-            <div class="kick__bar__container">
-                <input type="checkbox" id="kick"  class="one">
-                <input type="checkbox" id="kick" class="two">
-                <input type="checkbox" id="kick" class="three">
-                <input type="checkbox" id="kick" class="four">
-            </div>
-            <button class="play__button">Play</button>
-            <button class="stop__button">Stop</button>
-        </div>
-        <div class="hi-hat">
-            <div class="title">
-                <img  id="hihat__sound" class="instrument__sound" src="./dist/assets/icons/hihat.png" height="60px" alt="">
-            </div>
-            <div class="hihat__bar__container">
-                <input type="checkbox" id="hihat"  class="one">
-                <input type="checkbox" id="hihat" class="two">
-                <input type="checkbox" id="hihat" class="three">
-                <input type="checkbox" id="hihat" class="four">
+            <div class="play__stop__buttons">
+                <button class="play__button">
+                  <div class="fa fa-play"></div>
+                </button>
+                <button class="stop__button">
+                    <div class="fa fa-stop"></div>
+                </button>
             </div>
         </div>
-        <div class="clap">
-            <div class="title">
-                <img id="clap__sound" class="instrument__sound" src="./dist/assets/icons/clap.png" height="60px" alt="">
+
+        <div class="drums__container">
+            <div class="kick">
+                <div class="title">
+                    <img id="kick__image" class="instrument__sound" src="https://icon-library.com/images/drum-icon/drum-icon-17.jpg" height="60px" alt="">
+                </div>
+                <div class="kick__bar__container">
+                    <div class="kick__bar" id="one" data-active="false"> </div>
+                    <div class="kick__bar" id="two" data-active="false"></div>
+                    <div class="kick__bar" id="three" data-active="false"> </div>
+                    <div class="kick__bar" id="four" data-active="false"> </div>
+                </div>
             </div>
-            <div class="clap__bar__container">
-                <input type="checkbox" id="clap"  class="one">
-                <input type="checkbox" id="clap" class="two">
-                <input type="checkbox" id="clap" class="three">
-                <input type="checkbox" id="clap" class="four">
+            <div class="snare">
+                <div class="title">
+                    <img id="snare__sound" class="instrument__sound" src="./dist/assets/icons/snare.png" height="60px" alt="">
+                </div>
+                <div class="snare__bar__container">
+                    <div class="snare__bar" id="one" data-active="false"></div>
+                    <div class="snare__bar" id="two" data-active="false"> </div>
+                    <div class="snare__bar" id="three" data-active="false"> </div>
+                    <div class="snare__bar" id="four" data-active="false"></div>
+                </div>
             </div>
+            <div class="hihat">
+                <div class="title">
+                    <img  id="hihat__sound" class="instrument__sound" src="./dist/assets/icons/hihat.png" height="60px" alt="">
+                </div>
+                <div class="hihat__bar__container">
+                    <div class="hihat__bar" id="one" data-active="false"> </div>
+                    <div class="hihat__bar" id="two" data-active="false"> </div>
+                    <div class="hihat__bar" id="three" data-active="false"> </div>
+                    <div class="hihat__bar" id="four" data-active="false"> </div>
+                </div>
+            </div> 
+                <div class="clap">
+                <div class="title">
+                    <img id="clap__sound" class="instrument__sound" src="./dist/assets/icons/clap.png" height="60px" alt="">
+                </div>
+                <div class="clap__bar__container">
+                    <div class="clap__bar" id="one" data-active="false"></div>
+                    <div class="clap__bar" id="two" data-active="false"> </div>
+                    <div class="clap__bar" id="three" data-active="false"> </div>
+                    <div class="clap__bar" id="four" data-active="false"> </div>
+                </div>
             </div>
         </div>
     </div>
