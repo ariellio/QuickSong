@@ -297,7 +297,7 @@ p {
 }
 
 .audio__playing {
-  border: solid;
+  border: solid #736973;
   height: 25px;
   width: 80%;
   margin-left: 150px;

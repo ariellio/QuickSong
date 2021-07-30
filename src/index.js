@@ -1,15 +1,15 @@
 import {Howl, Howler} from "howler";
 import * as Tone from 'tone';
-import {song} from './instruments.js';
-import {stoppedKick, stoppedSnare, loopKick,loopSnare, loopHihat, loopClap, loopBpm} from './bpm';
-import * as samples from './sample.js';
-import * as stopandplay from './play_stop_sample.js';
+import {song} from './js/instruments.js';
+import {stoppedKick, stoppedSnare, loopKick,loopSnare, loopHihat, loopClap, loopBpm} from './js/bpm';
+import * as samples from './js/sample.js';
+import * as stopandplay from './js/play_stop_sample';
 
-
+window.someVar = {}
 
 document.addEventListener("DOMContentLoaded", () => {
     //tonetest is bpm
-    loopKick
+    // loopKick3
     loopSnare
     loopHihat
     loopClap
@@ -20,8 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     stoppedSnare
 
     samples
-
-    let someVar
+    someVar
 
 })
 
