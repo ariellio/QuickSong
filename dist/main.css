@@ -50,6 +50,10 @@
   height: 31px;
 }
 
+.kick__bar__container > div:hover {
+  cursor: pointer;
+}
+
 .snare__bar__container > div {
   border: 2px solid #181818;
   background-color: #202020;
@@ -59,6 +63,10 @@
   margin-top: 10px;
   width: 31px;
   height: 31px;
+}
+
+.snare__bar__container > div:hover {
+  cursor: pointer;
 }
 
 .hihat__bar__container > div {
@@ -72,6 +80,10 @@
   height: 31px;
 }
 
+.hihat__bar__container > div:hover {
+  cursor: pointer;
+}
+
 .clap__bar__container > div {
   border: 2px solid #181818;
   background-color: #202020;
@@ -82,6 +94,10 @@
   margin-bottom: 10px;
   width: 31px;
   height: 31px;
+}
+
+.clap__bar__container > div:hover {
+  cursor: pointer;
 }
 
 .kick {
@@ -120,32 +136,254 @@ body {
   width: 960px;
 }
 
+.instrumentTitle {
+  border: solid;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background: black;
+  margin: 25px;
+  padding: 5px;
+  color: #f81212;
+  border-radius: 5px;
+  border-width: 0.5px;
+  font-family: monospace;
+}
+
+.instrumentTitle:hover {
+  cursor: pointer;
+}
+
 .controls {
   display: flex;
   align-items: center;
-  border-radius: 20px;
+  border: solid;
+  border-width: 0.5px;
+  background: #5c5959;
 }
 
 .bpm__controls {
-  border: solid;
-  border-width: 0.5px;
   padding: 10px;
+  flex: 1;
+  background: #5c5959;
+  height: 25px;
 }
 
 .play__stop__buttons {
-  padding: 12px;
-  border: solid;
+  padding: 9px;
   border-width: 0.5px;
 }
 
+.play__button:hover {
+  cursor: pointer;
+  background: #dcdada;
+}
+
 .play__button {
-  background: white;
   border: none;
+  background: white;
+  border-radius: 3px;
+  padding: 5px 9px;
+}
+
+.play__button > div {
+  color: blue;
 }
 
 .stop__button {
-  background: white;
   border: none;
+  background: white;
+  border-radius: 3px;
+  padding: 5px 9px;
+}
+
+.stop__button:hover {
+  cursor: pointer;
+  background: #dcdada;
+}
+
+.stop__button > div {
+  color: #d69393;
+}
+
+body {
+  padding: 40px;
+  background-color: #c13b17;
+}
+
+p {
+  border-right: solid 5px rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  background-color: rgba(59, 61, 61, 0.7);
+  font-family: "Source Code Pro", monospace;
+  font-size: 16px;
+  border: solid black;
+  color: white;
+  margin-bottom: 190px;
+  margin-right: 5px;
+}
+
+/* Animation */
+p {
+  animation: animated-text 4s linear 1s 1 normal both, animated-cursor 400ms linear infinite;
+}
+
+/* text animation */
+/* cursor animations */
+@keyframes animated-cursor {
+  from {
+    border-right-color: rgba(38, 182, 208, 0.75);
+  }
+  to {
+    border-right-color: #efeff5;
+  }
+}
+.sample__container {
+  display: flex;
+  border: solid;
+  height: 200px;
+  justify-content: space-around;
+  align-items: center;
+  border-width: 0.5px;
+  position: relative;
+}
+
+.choose__instrument {
+  display: flex;
+  flex-direction: column;
+}
+
+.choose__instrument > label {
+  border: solid;
+  padding: 5px;
+  border-width: 0.5px;
+  text-align: center;
+}
+
+.choose__bpm {
+  display: flex;
+  flex-direction: column;
+}
+
+.choose__bpm > label {
+  border: solid;
+  padding: 5px;
+  border-width: 0.5px;
+  text-align: center;
+}
+
+.submit__search {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit__search > label {
+  border: solid;
+  padding: 5px;
+  border-width: 0.5px;
+  text-align: center;
+}
+
+.play__sample__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.play__sample__container > label {
+  border: solid;
+  padding: 5px;
+  border-width: 0.5px;
+  text-align: center;
+}
+
+.audio__playing {
+  border: solid;
+  height: 25px;
+  width: 80%;
+  margin-left: 150px;
+  margin-top: 170px;
+}
+
+#soundType {
+  background: #767373;
+  outline: none;
+}
+
+#soundType:hover {
+  cursor: pointer;
+  background: #605e5e;
+}
+
+.search__button {
+  background-color: #767373;
+  outline: none;
+}
+
+.search__button:hover {
+  background-color: #767373;
+  cursor: pointer;
+}
+
+.pause__sample {
+  background-color: #767373;
+  cursor: pointer;
+}
+
+#input__BPM {
+  background-color: #767373;
+  outline: none;
+}
+
+.my__info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 250px;
+  border-bottom: solid;
+  border-width: 0.5px;
+}
+
+.instructions {
+  border-bottom: solid;
+  text-align: center;
+  display: flex;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+header {
+  margin-bottom: 100px;
+  border-left: solid;
+  border-right: solid;
+  border-width: 0.5px;
+  border-top: solid;
+}
+
+li {
+  border-bottom: solid;
+  color: #d3f0f2;
+}
+
+#left__most__instruction {
+  border-left: solid;
+}
+
+li > span {
+  color: black;
+}
+
+#right__most__instruction {
+  border-right: solid;
+}
+
+.instructions__title {
+  font-size: x-large;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.instructions > div {
+  padding-bottom: 10px;
 }
 
 body {

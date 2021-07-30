@@ -1,0 +1,86 @@
+.sample__container {
+  display: flex;
+  border: solid;
+  height: 200px;
+  justify-content: space-around;
+  align-items: center;
+  border-width: 0.5px;
+  position: relative;
+}
+
+.choose__instrument {
+  display: flex;
+  flex-direction: column;
+}
+.choose__instrument > label {
+  border: solid;
+  padding: 5px;
+  border-width: 0.5px;
+  text-align: center;
+}
+.choose__bpm {
+  display: flex;
+  flex-direction: column;
+}
+.choose__bpm > label {
+  border: solid;
+  padding: 5px;
+  border-width: 0.5px;
+  text-align: center;
+}
+.submit__search {
+  display: flex;
+  flex-direction: column;
+}
+.submit__search > label {
+  border: solid;
+  padding: 5px;
+  border-width: 0.5px;
+  text-align: center;
+}
+.play__sample__container {
+  display: flex;
+  flex-direction: column;
+}
+.play__sample__container > label {
+  border: solid;
+  padding: 5px;
+  border-width: 0.5px;
+  text-align: center;
+}
+
+.audio__playing {
+  border: solid;
+  height: 25px;
+  width: 80%;
+  margin-left: 150px;
+  margin-top: 170px;
+}
+
+#soundType {
+  background: #767373;
+  outline: none;
+}
+#soundType:hover {
+  cursor: pointer;
+  background: #605e5e;
+}
+
+.search__button {
+  background-color: #767373;
+  outline: none;
+}
+.search__button:hover {
+  background-color: #767373;
+  cursor: pointer;
+}
+
+.pause__sample {
+  background-color: #767373;
+  cursor: pointer;
+}
+
+#input__BPM {
+  background-color: #767373;
+  outline: none;
+}

@@ -1,26 +1,96 @@
 .controls {
   display: flex;
   align-items: center;
-  border-radius: 20px;
+  border: solid;
+  border-width: 0.5px;
+  background: #5c5959;
 }
 
 .bpm__controls {
-  border: solid;
-  border-width: 0.5px;
   padding: 10px;
+  flex: 1;
+  background: #5c5959;
+  height: 25px;
 }
 
 .play__stop__buttons {
-  padding: 12px;
-  border: solid;
+  padding: 9px;
   border-width: 0.5px;
 }
 
+.play__button:hover {
+  cursor: pointer;
+  background: rgb(220, 218, 218);
+}
+
 .play__button {
-  background: white;
   border: none;
+  background: white;
+  border-radius: 3px;
+  padding: 5px 9px;
+}
+
+.play__button > div {
+  color: blue;
 }
 .stop__button {
-  background: white;
   border: none;
+  background: white;
+  border-radius: 3px;
+  padding: 5px 9px;
+}
+
+.stop__button:hover {
+  cursor: pointer;
+  background: rgb(220, 218, 218);
+}
+
+.stop__button > div {
+  color: rgb(214, 147, 147);
+}
+
+body {
+  padding: 40px;
+  background-color: #c13b17;
+}
+
+p {
+  border-right: solid 5px rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  //   overflow: hidden;
+  background-color: rgba(59, 61, 61, 0.7);
+  font-family: "Source Code Pro", monospace;
+  font-size: 16px;
+  border: solid black;
+  color: white;
+  margin-bottom: 190px;
+  margin-right: 5px;
+}
+
+/* Animation */
+p {
+  animation: animated-text 4s linear 1s 1 normal both,
+    animated-cursor 400ms linear infinite;
+}
+
+/* text animation */
+
+// @keyframes animated-text {
+//   from {
+//     width: 0;
+//   }
+//   to {
+//     width: 200px;
+//   }
+// }
+
+/* cursor animations */
+
+@keyframes animated-cursor {
+  from {
+    border-right-color: rgba(38, 182, 208, 0.75);
+  }
+  to {
+    border-right-color: rgb(239, 239, 245);
+  }
 }

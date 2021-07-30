@@ -11,7 +11,11 @@ import { Time } from 'tone';
 var AudioContext = window.AudioContext || window.webkitAudioContext;
 var audioCtx = new AudioContext();
 
+// GRABBING INSTRUMENT ELEMENTS FROM DOM
 const kickDiv = document.getElementsByClassName("kick__bar");
+const snareDiv = document.getElementsByClassName("snare__bar");
+const hihatDiv = document.getElementsByClassName("hihat__bar");
+const clapDiv = document.getElementsByClassName("clap__bar");
 // console.log(kickD)
 kickDiv.forEach(singleKick => {
     singleKick.addEventListener('click', () => {
@@ -22,6 +26,42 @@ kickDiv.forEach(singleKick => {
             singleKick.dataset.active = "true"
             singleKick.style.backgroundColor = "red"
         }
+    })
+})
+snareDiv.forEach(singleSnare => {
+    singleSnare.addEventListener('click', () => {
+        if (singleSnare.dataset.active === "true") {
+            singleSnare.dataset.active = "false"
+            singleSnare.style.backgroundColor = "#202020"
+        } else if (singleSnare.dataset.active === "false"){
+            singleSnare.dataset.active = "true"
+            singleSnare.style.backgroundColor = "red"
+        }
+
+    })
+})
+hihatDiv.forEach(singleHihat => {
+    singleHihat.addEventListener('click', () => {
+        if (singleHihat.dataset.active === "true") {
+            singleHihat.dataset.active = "false"
+            singleHihat.style.backgroundColor = "#202020"
+        } else if (singleHihat.dataset.active === "false"){
+            singleHihat.dataset.active = "true"
+            singleHihat.style.backgroundColor = "red"
+        }
+
+    })
+})
+
+clapDiv.forEach(singleClap => {
+    singleClap.addEventListener('click', () => {
+        if (singleClap.dataset.active === "true") {
+            singleClap.dataset.active = "false"
+            singleClap.style.backgroundColor = "#202020"
+        } else if (singleClap.dataset.active === "false"){
+            singleClap.dataset.active = "true"
+            singleClap.style.backgroundColor = "red"
+        }
 
     })
 })
@@ -30,8 +70,10 @@ kickDiv.forEach(singleKick => {
 //PLAY
 let getPlay = document.getElementsByClassName("play__button") 
 export let loopKick = getPlay[0].addEventListener('click', () => {
+    let currentState = Tone.context.state
         if (Tone.context.state !== 'running') {
             Tone.context.resume();
+            Tone.start();
         } 
 
         //// ACCESSING HTML ELEMENTS
@@ -66,47 +108,97 @@ export let loopKick = getPlay[0].addEventListener('click', () => {
         
         function repeat(time){
             let beat = Tone.Transport.position.split(":")[1]
-            if (kickDiv[0].dataset.active === "true" && beat === "0" && currentState !== "running") {
-                kick.triggerAttackRelease("c1", "1m", time)
-            }
-            if (kickDiv[1].dataset.active === "true" && beat === "1" && currentState !== "running") {
-                kick.triggerAttackRelease("c1", "1m", time)
-            }
-            if (kickDiv[2].dataset.active === "true" && beat === "2" && currentState !== "running") {
-                kick.triggerAttackRelease("c1", "1m", time)
-            }
-            if (kickDiv[3].dataset.active === "true" && beat === "3" && currentState !== "running") {
-                kick.triggerAttackRelease("c1", "1m", time)
-            }
 
+            // MAKING BORDER COLOR CHANGE
+                // KICK
+            kickDiv.forEach(singleKickDiv => {
+                if (beat === singleKickDiv.id ) {
+                    singleKickDiv.style.borderColor = "yellow"
+                } else if (beat !== singleKickDiv.id) {
+                    singleKickDiv.style.borderColor = "#202020"
+                } 
+
+                if (beat === singleKickDiv.id && singleKickDiv.dataset.active === "true") {
+                    singleKickDiv.style.backgroundColor = "#7c0000"
+                } else if (beat !== singleKickDiv.id && singleKickDiv.dataset.active === "true") {
+                    singleKickDiv.style.backgroundColor = "red" 
+                }
+            })
+                // SNARE
+            snareDiv.forEach(singleSnareDiv => {
+                if (beat === singleSnareDiv.id) {
+                    singleSnareDiv.style.borderColor = "yellow"
+                } else if (beat !== singleSnareDiv.id) {
+                    singleSnareDiv.style.borderColor = "#202020"
+                }
+
+                if (beat === singleSnareDiv.id && singleSnareDiv.dataset.active === "true") {
+                    singleSnareDiv.style.backgroundColor = "#7c0000"
+                } else if (beat !== singleSnareDiv.id && singleSnareDiv.dataset.active === "true") {
+                    singleSnareDiv.style.backgroundColor = "red" 
+                }
+            })
+                
+                // HIHAT
+                hihatDiv.forEach(singleHihatDiv => {
+                    if (beat === singleHihatDiv.id) {
+                        singleHihatDiv.style.borderColor = "yellow"
+                    } else if (beat !== singleHihatDiv.id) {
+                        singleHihatDiv.style.borderColor = "#202020"
+                    }
+
+                    if (beat === singleHihatDiv.id && singleHihatDiv.dataset.active === "true") {
+                        singleHihatDiv.style.backgroundColor = "#7c0000"
+                    } else if (beat !== singleHihatDiv.id && singleHihatDiv.dataset.active === "true") {
+                        singleHihatDiv.style.backgroundColor = "red" 
+                    }
+                })
+                // CLAP
+                clapDiv.forEach(singleClapDiv => {
+                    if (beat === singleClapDiv.id) {
+                        singleClapDiv.style.borderColor = "yellow"
+                    } else if (beat !== singleClapDiv.id) {
+                        singleClapDiv.style.borderColor = "#202020"
+                    }
+
+                    if (beat === singleClapDiv.id && singleClapDiv.dataset.active === "true") {
+                        singleClapDiv.style.backgroundColor = "#7c0000"
+                    } else if (beat !== singleClapDiv.id && singleClapDiv.dataset.active === "true") {
+                        singleClapDiv.style.backgroundColor = "red" 
+                    }
+                })
+
+            // PLAY KICK
+            kickDiv.forEach(singleKickDiv => {
+               if (singleKickDiv.dataset.active === "true" && beat === singleKickDiv.id && currentState !== "running") {
+                   kick.triggerAttackRelease("c1", "1m", time)
+               }
+            })
 
         }
-
+        Tone.start();
         Tone.Transport.start();
 
-        let currentState = Tone.context.state
 
-
-
-
-        SNARE
+        // SNARE
         Tone.ToneAudioBuffer.loaded().then(() =>{
                     Tone.Transport.scheduleRepeat(time => {
                         repeat(time)
                     }, "4n");
                     
+                    
                     function repeat(time){
                         let beat = Tone.Transport.position.split(":")[1]
-                        if (snareRow[0].checked && beat === "0" && currentState !== "running") {
+                        if (snareDiv[0].dataset.active === "true" && beat === "0" && currentState !== "running") {
                             snareInstrument.triggerAttackRelease("c2", "1m")
                         }
-                        if (snareRow[1].checked && beat === "1" && currentState !== "running") {
+                        if (snareDiv[1].dataset.active === "true" && beat === "1" && currentState !== "running") {
                             snareInstrument.triggerAttackRelease("c2", "1m")
                         }
-                        if (snareRow[2].checked && beat === "2" && currentState !== "running") {
+                        if (snareDiv[2].dataset.active === "true" && beat === "2" && currentState !== "running") {
                             snareInstrument.triggerAttackRelease("c2", "1m")
                         }
-                        if (snareRow[3].checked && beat === "3" && currentState !== "running") {
+                        if (snareDiv[3].dataset.active === "true" && beat === "3" && currentState !== "running") {
                             snareInstrument.triggerAttackRelease("c2", "1m")
                         }
             
@@ -116,55 +208,55 @@ export let loopKick = getPlay[0].addEventListener('click', () => {
 
     
     
-    //     // HIHAT
-    //     Tone.ToneAudioBuffer.loaded().then(() =>{
-    //                 Tone.Transport.scheduleRepeat(time => {
-    //                     repeat(time)
-    //                 }, "4n");
+        // HIHAT
+        Tone.ToneAudioBuffer.loaded().then(() =>{
+                    Tone.Transport.scheduleRepeat(time => {
+                        repeat(time)
+                    }, "4n");
                     
-    //                 function repeat(time){
-    //                     let beat = Tone.Transport.position.split(":")[1]
-    //                     if (hihatRow[0].checked && beat === "0" && currentState !== "running" ) {
-    //                         hihatInstrument.triggerAttackRelease("c2", "1m")
-    //                     }
-    //                     if (hihatRow[1].checked && beat === "1" && currentState !== "running" ) {
-    //                         hihatInstrument.triggerAttackRelease("c2", "1m")
-    //                     }
-    //                     if (hihatRow[2].checked && beat === "2" && currentState !== "running" ) {
-    //                         hihatInstrument.triggerAttackRelease("c2", "1m")
-    //                     }
-    //                     if (hihatRow[3].checked && beat === "3" && currentState !== "running" ) {
-    //                         hihatInstrument.triggerAttackRelease("c2", "1m")
-    //                     }
+                    function repeat(time){
+                        let beat = Tone.Transport.position.split(":")[1]
+                        if (hihatDiv[0].dataset.active === "true" && beat === "0" && currentState !== "running" ) {
+                            hihatInstrument.triggerAttackRelease("c2", "1m")
+                        }
+                        if (hihatDiv[1].dataset.active === "true" && beat === "1" && currentState !== "running" ) {
+                            hihatInstrument.triggerAttackRelease("c2", "1m")
+                        }
+                        if (hihatDiv[2].dataset.active === "true" && beat === "2" && currentState !== "running" ) {
+                            hihatInstrument.triggerAttackRelease("c2", "1m")
+                        }
+                        if (hihatDiv[3].dataset.active === "true" && beat === "3" && currentState !== "running" ) {
+                            hihatInstrument.triggerAttackRelease("c2", "1m")
+                        }
             
-    //                 }
-    //                 Tone.Transport.start();  
-    //     });
+                    }
+                    Tone.Transport.start();  
+        });
 
     //    // CLAP 
-    //     Tone.ToneAudioBuffer.loaded().then(() =>{
-    //                 Tone.Transport.scheduleRepeat(time => {
-    //                     repeat(time)
-    //                 }, "4n");
+        Tone.ToneAudioBuffer.loaded().then(() =>{
+                    Tone.Transport.scheduleRepeat(time => {
+                        repeat(time)
+                    }, "4n");
                     
-    //                 function repeat(time){
-    //                     let beat = Tone.Transport.position.split(":")[1]
-    //                     if (clapRow[0].checked && beat === "0" && currentState !== "running") {
-    //                         clapInstrument.triggerAttackRelease("c2", "1m")
-    //                     }
-    //                     if (clapRow[1].checked && beat === "1" && currentState !== "running") {
-    //                         clapInstrument.triggerAttackRelease("c2", "1m")
-    //                     }
-    //                     if (clapRow[2].checked && beat === "2" && currentState !== "running") {
-    //                         clapInstrument.triggerAttackRelease("c2", "1m")
-    //                     }
-    //                     if (clapRow[3].checked && beat === "3" && currentState !== "running") {
-    //                         clapInstrument.triggerAttackRelease("c2", "1m")
-    //                     }
+                    function repeat(time){
+                        let beat = Tone.Transport.position.split(":")[1]
+                        if (clapDiv[0].dataset.active === "true" && beat === "0" && currentState !== "running") {
+                            clapInstrument.triggerAttackRelease("c2", "1m")
+                        }
+                        if (clapDiv[1].dataset.active === "true" && beat === "1" && currentState !== "running") {
+                            clapInstrument.triggerAttackRelease("c2", "1m")
+                        }
+                        if (clapDiv[2].dataset.active === "true" && beat === "2" && currentState !== "running") {
+                            clapInstrument.triggerAttackRelease("c2", "1m")
+                        }
+                        if (clapDiv[3].dataset.active === "true" && beat === "3" && currentState !== "running") {
+                            clapInstrument.triggerAttackRelease("c2", "1m")
+                        }
             
-    //                 }
-    //                 Tone.Transport.start();  
-    //     });
+                    }
+                    Tone.Transport.start();  
+        });
         
 
     //STOP PLAYBACK

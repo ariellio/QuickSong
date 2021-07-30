@@ -1,0 +1,47 @@
+.instructions {
+  border-bottom: solid;
+  text-align: center;
+  display: flex;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+header {
+  margin-bottom: 100px;
+  border-left: solid;
+  border-right: solid;
+  border-width: 0.5px;
+  border-top: solid;
+}
+
+// li {
+//   list-style: none;
+// }
+
+li {
+  border-bottom: solid;
+  color: #d3f0f2;
+}
+
+#left__most__instruction {
+  border-left: solid;
+}
+
+li > span {
+  color: black;
+}
+
+#right__most__instruction {
+  border-right: solid;
+}
+
+.instructions__title {
+  font-size: x-large;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.instructions > div {
+  padding-bottom: 10px;
+}

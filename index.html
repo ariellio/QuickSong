@@ -11,6 +11,30 @@
     <title>QuickSong</title>
 </head>
 
+<header>
+    <div class="instructions__title">
+        How To Use
+    </div>
+    <div class="instructions">
+        <li id="left__most__instruction"> <span>
+            Create drum pattern by choosing drum pads to play
+        </span>
+        </li>
+        <li>
+            <span>
+                Choose your preferred instrument and BPM
+            </span>
+        </li>
+        <li id="right__most__instruction">
+            <span>
+                Create a sample to go along with drums by clicking shuffle
+            </span>
+        </li>
+        <!-- <span>
+            Have fun!
+        </span> -->
+    </div>
+</header>
 <body>
     <div class="sequencer__container">
         <div class="controls">
@@ -32,52 +56,127 @@
         <div class="drums__container">
             <div class="kick">
                 <div class="title">
-                    <img id="kick__image" class="instrument__sound" src="https://icon-library.com/images/drum-icon/drum-icon-17.jpg" height="60px" alt="">
+                    <div class="instrumentTitle">
+                        Kick
+                    </div>
+                    <!-- <img id="kick__image" class="instrument__sound" src="https://icon-library.com/images/drum-icon/drum-icon-17.jpg" height="60px" alt=""> -->
                 </div>
                 <div class="kick__bar__container">
-                    <div class="kick__bar" id="one" data-active="false"> </div>
-                    <div class="kick__bar" id="two" data-active="false"></div>
-                    <div class="kick__bar" id="three" data-active="false"> </div>
-                    <div class="kick__bar" id="four" data-active="false"> </div>
+                    <div class="kick__bar" id="0" data-active="false"> </div>
+                    <div class="kick__bar" id="1" data-active="false"></div>
+                    <div class="kick__bar" id="2" data-active="false"> </div>
+                    <div class="kick__bar" id="3" data-active="false"> </div>
                 </div>
             </div>
             <div class="snare">
                 <div class="title">
-                    <img id="snare__sound" class="instrument__sound" src="./dist/assets/icons/snare.png" height="60px" alt="">
+                    <div class="instrumentTitle">
+                        Snare
+                    </div>
                 </div>
                 <div class="snare__bar__container">
-                    <div class="snare__bar" id="one" data-active="false"></div>
-                    <div class="snare__bar" id="two" data-active="false"> </div>
-                    <div class="snare__bar" id="three" data-active="false"> </div>
-                    <div class="snare__bar" id="four" data-active="false"></div>
+                    <div class="snare__bar" id="0" data-active="false"></div>
+                    <div class="snare__bar" id="1" data-active="false"> </div>
+                    <div class="snare__bar" id="2" data-active="false"> </div>
+                    <div class="snare__bar" id="3" data-active="false"></div>
                 </div>
             </div>
             <div class="hihat">
                 <div class="title">
-                    <img  id="hihat__sound" class="instrument__sound" src="./dist/assets/icons/hihat.png" height="60px" alt="">
+                    <div class="instrumentTitle">
+                        Hi-hat
+                    </div>
                 </div>
                 <div class="hihat__bar__container">
-                    <div class="hihat__bar" id="one" data-active="false"> </div>
-                    <div class="hihat__bar" id="two" data-active="false"> </div>
-                    <div class="hihat__bar" id="three" data-active="false"> </div>
-                    <div class="hihat__bar" id="four" data-active="false"> </div>
+                    <div class="hihat__bar" id="0" data-active="false"> </div>
+                    <div class="hihat__bar" id="1" data-active="false"> </div>
+                    <div class="hihat__bar" id="2" data-active="false"> </div>
+                    <div class="hihat__bar" id="3" data-active="false"> </div>
                 </div>
             </div> 
                 <div class="clap">
                 <div class="title">
-                    <img id="clap__sound" class="instrument__sound" src="./dist/assets/icons/clap.png" height="60px" alt="">
+                    <div class="instrumentTitle">
+                        Clap
+                    </div>
                 </div>
                 <div class="clap__bar__container">
-                    <div class="clap__bar" id="one" data-active="false"></div>
-                    <div class="clap__bar" id="two" data-active="false"> </div>
-                    <div class="clap__bar" id="three" data-active="false"> </div>
-                    <div class="clap__bar" id="four" data-active="false"> </div>
+                    <div class="clap__bar" id="0" data-active="false"></div>
+                    <div class="clap__bar" id="1" data-active="false"> </div>
+                    <div class="clap__bar" id="2" data-active="false"> </div>
+                    <div class="clap__bar" id="3" data-active="false"> </div>
                 </div>
             </div>
+
+            <div class="sample__container">
+                <div class="controls__container">
+                    <div class="choose__instrument">
+                        <label>
+                            Pick an Instrument
+                        </label>
+                        <select id="soundType" name="sounds">
+                            <optgroup label="Choose from Below">
+                                <option value="guitar"> Guitar </option>
+                                <option value="piano"> Piano </option>
+                                <option value="synth"> Synth </option>
+                            </optgroup>
+                            </select>
+                    </div>
+                    <div class="choose__bpm">
+                        <label>
+                            Choose a BPM
+                        </label>
+                        <input id="input__BPM"  type="number" value="120" />
+                        <img  id="up" />
+                        <img id="down" />
+                    </div>
+                    <div class="submit__search">
+                        <label>
+                            Generate a sample
+                        </label>
+                        <button class="search__button">
+                            Shuffle
+                        </button>
+                    </div>
+                    <div class="play__sample__container">
+                        <label>
+                            Pause and play
+                        </label>
+                        <button data-soundInfo="" class="pause__sample">
+                            <div class="fa fa-play"></div>
+                        </button>
+                    </div>
+                </div>
+                <div class="audio__playing">
+                    box
+                </div>
+                <p>
+                    Have Fun
+                </p>
+            </div>
         </div>
+      
     </div>
     <script src="howler.min.js"></script>
     <script src="./dist/main.js"></script>
 </body>
-
+<footer>
+    <div class="my__info">
+        <div class="github">
+            <a href="https://github.com/ariellio">
+                <img a-href="facebook.com" height="20px"src="https://cdn.iconscout.com/icon/free/png-512/github-138-459178.png" alt="">
+            </a>
+        </div>
+        <div class="linked__inn">
+            <a href="https://www.w3schools.com/html/html_links.asp">
+                <img height="20px" src="https://cdn.iconscout.com/icon/free/png-128/linkedin-192-739517.png" alt="">
+            </a>
+        </div>
+        <div class="angelList">
+            <a href="https://www.w3schools.com/html/html_links.asp">
+                <img height="20px" src="https://cdn.iconscout.com/icon/free/png-128/angellist-victory-win-award-reward-fund-44423.png" alt="">
+            </a>
+        </div>
+    </div>
+</footer>
 </html>

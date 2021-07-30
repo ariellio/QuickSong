@@ -43,6 +43,9 @@
   width: 31px;
   height: 31px;
 }
+.kick__bar__container > div:hover {
+  cursor: pointer;
+}
 .snare__bar__container > div {
   border: 2px solid #181818;
   background-color: #202020;
@@ -52,6 +55,9 @@
   margin-top: 10px;
   width: 31px;
   height: 31px;
+}
+.snare__bar__container > div:hover {
+  cursor: pointer;
 }
 .hihat__bar__container > div {
   border: 2px solid #181818;
@@ -63,6 +69,9 @@
   width: 31px;
   height: 31px;
 }
+.hihat__bar__container > div:hover {
+  cursor: pointer;
+}
 .clap__bar__container > div {
   border: 2px solid #181818;
   background-color: #202020;
@@ -73,6 +82,9 @@
   margin-bottom: 10px;
   width: 31px;
   height: 31px;
+}
+.clap__bar__container > div:hover {
+  cursor: pointer;
 }
 
 .kick {
@@ -107,4 +119,22 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 960px;
+}
+
+.instrumentTitle {
+  border: solid;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background: black;
+  margin: 25px;
+  padding: 5px;
+  color: #f81212;
+  border-radius: 5px;
+  border-width: 0.5px;
+  font-family: monospace;
+}
+
+.instrumentTitle:hover {
+  cursor: pointer;
 }
