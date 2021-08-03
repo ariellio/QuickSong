@@ -1,7 +1,7 @@
 # QuickSong
 
 ### Welcome to Quicksong!
-QuickSong is an interactive app where users can customize a sample to play, and can create drum patterns to accompany it.
+QuickSong is an interactive app where users can create custom drum patterns and can find samples to play to accompany it.
 
 ## MVP List
 
