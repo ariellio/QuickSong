@@ -6,6 +6,21 @@ QuickSong is an interactive app where users can create custom drum patterns and 
 
 <img src="drumSequencerPhoto.png" alt="">
 
+## Technologies
+
+- Tone.js
+  - Used to create custom drum instruments along with functionality for playback in rhythm at various tempos.
+- FreeSound API
+  - Using to access samples for users to pick based off of their query on instrument and BPM
+- Javascript
+  - To build an interactive front end application
+- CSS
+  - To style the drum pads and bring user playback to life
+- HTML
+  - To structure the information appropriately
+- Howler.js
+  - To access audio files easily and to be able to play audio files
+
 ## Features
 - Users adjust the BPM which controls the speed of playback for each drum sound
 - Each instrument contains four pads where users can click on to trigger the playback of the instrument on that beat at the speed of the BPM
@@ -29,20 +44,6 @@ QuickSong is an interactive app where users can create custom drum patterns and 
 
 - Users can share their quickSong with friends by sharing the link
 
-## Technologies
-
-- Tone.js
-  - To create custom drum sounds and to create user controlled tempo functionality as well.
-- FreeSound API
-  - Using to access samples for users to pick an instrument and a BPM
-- Javascript
-  - To build an interactive front end application
-- CSS
-  - To style the website appropriately
-- HTML
-  - To structure the information appropriately
-- Howler.js
-  - To access audio files easily and to be able to play
 
 ## Wireframe
 
