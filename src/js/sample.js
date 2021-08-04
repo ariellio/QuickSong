@@ -32,7 +32,6 @@ const fetchSong = async (instrument, bpm) => {
         // }
         
     })
-    debugger
     
     const randomElement = resultsArray[Math.floor(Math.random() * resultsArray.length)]
     const resultId = randomElement.id

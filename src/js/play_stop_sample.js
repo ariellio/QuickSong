@@ -30,7 +30,6 @@ pauseAndPlay.addEventListener('click', () => {
 })
 
 
-// debugger
 // pauseAndPlay.addEventListener('click', () => {
 //    console.log("hello")
 // })
