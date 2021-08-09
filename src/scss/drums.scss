@@ -1,5 +1,7 @@
 .sequencer__container {
-  margin-top: 200px;
+  margin-top: 50px;
+  flex: 8;
+  margin-right: 10px;
 }
 
 .drums__container {
@@ -123,6 +125,7 @@ body {
 
 .instrumentTitle {
   border: solid;
+  width: 40px;
   align-items: center;
   justify-content: center;
   display: flex;

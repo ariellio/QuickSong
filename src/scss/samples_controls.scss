@@ -11,6 +11,8 @@
 .choose__instrument {
   display: flex;
   flex-direction: column;
+  background: black;
+  color: red;
 }
 .choose__instrument > label {
   border: solid;
@@ -27,6 +29,8 @@
   padding: 5px;
   border-width: 0.5px;
   text-align: center;
+  background: black;
+  color: red;
 }
 .submit__search {
   display: flex;
@@ -40,6 +44,8 @@
 }
 .play__sample__container {
   display: flex;
+  margin-right: 50px;
+  text-align: center;
   flex-direction: column;
 }
 .play__sample__container > label {
@@ -58,7 +64,7 @@
 }
 
 #soundType {
-  background: #767373;
+  background: darkRed;
   outline: none;
 }
 #soundType:hover {
@@ -67,20 +73,57 @@
 }
 
 .search__button {
-  background-color: #767373;
-  outline: none;
+  background: black;
+  color: red;
+  border: solid;
+  border-width: 0.5px;
+  padding: 2px 5px;
+  border-radius: 8px;
 }
 .search__button:hover {
-  background-color: #767373;
+  background-color: rgb(56, 50, 50);
   cursor: pointer;
 }
 
 .pause__sample {
-  background-color: #767373;
   cursor: pointer;
+  background: black;
+  color: red;
+  border: solid;
+  border-width: 0.5px;
+  margin-bottom: 5px;
+  max-width: 25px;
+  margin-left: 50px;
+  border-radius: 5px;
+}
+
+.pause__sample:hover {
+  background-color: rgb(56, 50, 50);
 }
 
 #input__BPM {
-  background-color: #767373;
+  background-color: darkred;
   outline: none;
+}
+
+.controls__container {
+  flex: 1;
+  display: flex;
+  border: solid #726872;
+  margin-left: 10px;
+}
+
+.sampleButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 10px;
+}
+
+.fa,
+.fas {
+  font-weight: 600;
+}
+
+.fafa-play {
 }

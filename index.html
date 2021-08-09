@@ -11,31 +11,61 @@
     <title>QuickSong</title>
 </head>
 
-<header>
-    <div class="instructions__title">
-        How To Use
-    </div>
+<!-- <header>
     <div class="instructions">
-        <li id="left__most__instruction"> <span>
-            Create drum pattern by choosing drum pads to play
-        </span>
-        </li>
-        <li>
-            <span>
-                Choose your preferred instrument and BPM
+            <li id="left__most__instruction"> <span>
+                <br>
+                Each pad plays one beat. Choose as many pads as you'd like. 
+                <br>
+                <br>
+                Adjust the speed of playback by changing the BPM. 
+                <br>
+                <br>
+                Stop and play playback by using the buttons in the right corner.
             </span>
-        </li>
-        <li id="right__most__instruction">
-            <span>
-                Create a sample to go along with drums by clicking shuffle
-            </span>
-        </li>
-        <!-- <span>
-            Have fun!
-        </span> -->
+            </li>
+
+        </div>
+        <div class="samplerInstructions__container">
+                <div class="samplerInstruments"> Samples </div>
+                <div class="listItems">
+                    <li id="right__most__instruction">
+                        <span>
+                            Pick Instrument type
+                            <br>
+                            Pick BPM
+                            <br>
+                            Generate a sample by clicking Shuffle
+                            <br>
+                            Pause and play the sample by clicking play
+                        </span>
+                        <br>
+                    </li>
+                </div>
+        </div> 
     </div>
-</header>
+</header> -->
 <body>
+    <div class="mainStuff">
+        <div class="instructions">
+            <li id="left__most__instruction"> <span>
+                <br>
+                Each pad plays one beat. 
+                <br>
+                <br>
+                Choose as many pads as you'd like. 
+                <br>
+                <br>
+                Adjust the speed of playback by changing the BPM. 
+                <br>
+                <br>
+                Add a sampled loop instrument by picking instrument and a Tempo.
+                <br>
+                <br>
+                When ready, click shuffle and a looped sample will play
+            </span>
+            </li>
+        </div>
     <div class="sequencer__container">
         <div class="controls">
             <div class="bpm__controls">
@@ -84,7 +114,7 @@
             <div class="hihat">
                 <div class="title">
                     <div class="instrumentTitle">
-                        Hi-hat
+                        Hihat
                     </div>
                 </div>
                 <div class="hihat__bar__container">
@@ -110,6 +140,7 @@
 
             <div class="sample__container">
                 <div class="controls__container">
+                    <div class="search__container">
                     <div class="choose__instrument">
                         <label>
                             Pick an Instrument
@@ -129,33 +160,39 @@
                         <input id="input__BPM"  type="number" value="120" />
                         <img  id="up" />
                         <img id="down" />
-                    </div>
-                    <div class="submit__search">
-                        <label>
-                            Generate a sample
-                        </label>
-                        <button class="search__button">
-                            Shuffle
-                        </button>
-                    </div>
-                    <div class="play__sample__container">
-                        <label>
-                            Pause and play
-                        </label>
-                        <button data-soundInfo="" class="pause__sample">
-                            <div class="fa fa-play"></div>
-                        </button>
+                    </div>     
+                </div>
+                    <!-- <div class="spaceFiller">
+                        filled
+                    </div> -->
+                    <div class="sampleButtons">
+                        <div class="submit__search">
+                            <!-- <label>
+                                Generate a sample
+                            </label> -->
+                            <button class="search__button">
+                                Shuffle
+                            </button>
+                        </div>
+                        <div class="play__sample__container">
+                            <!-- <label>
+                                Pause and play
+                            </label> -->
+                            <button data-soundInfo="" class="pause__sample">
+                                <div class="fa fa-play"></div>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="audio__playing">
-                    <!-- box -->
-                </div>
+                <!-- <div class="audio__playing">
+                </div> -->
                 <p>
                     Have Fun
                 </p>
             </div>
         </div>
       
+    </div>
     </div>
     <script src="howler.min.js"></script>
     <script src="./dist/main.js"></script>

@@ -1,17 +1,20 @@
 .instructions {
-  border-bottom: solid;
+  border-top: solid #0f0f0f;
+  border-left: solid black;
+  border-right: solid black;
+  border-width: 0.5px;
+  border-bottom: solid #0f0f0f;
   text-align: center;
-  display: flex;
-  padding-bottom: 10px;
   padding-right: 10px;
+  font-size: x-large;
+  border-radius: 20px;
+  flex: 1;
 }
 
 header {
   margin-bottom: 100px;
-  border-left: solid;
-  border-right: solid;
   border-width: 0.5px;
-  border-top: solid;
+  height: 200px;
 }
 
 // li {
@@ -24,24 +27,97 @@ li {
 }
 
 #left__most__instruction {
-  border-left: solid;
+  list-style: none;
+  text-align: left;
+  color: black;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  padding: 20px;
+  font-size: large;
+  margin-left: 10px;
+  margin-top: 20px;
+  background: crimson;
 }
 
 li > span {
+  font-family: monospace;
   color: black;
+  padding: 20px;
 }
 
 #right__most__instruction {
-  border-right: solid;
+  background: crimson;
+  height: 180px;
+  list-style: none;
+  color: red;
+  border-radius: 50px;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 .instructions__title {
+  text-align: center;
+  border-radius: 20px;
+  color: white;
   font-size: x-large;
   padding-bottom: 15px;
   padding-top: 10px;
-  text-align: center;
 }
 
 .instructions > div {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.drumsInstructions__container {
+  // display: flex;
+  // flex-direction: column;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.drumsInstructions {
+  border: solid;
+  border-width: 2.5px;
+  font-family: monospace;
   padding-bottom: 10px;
+  font-size: xx-large;
+  background: black;
+  width: 200px;
+  text-align: center;
+  height: 30px;
+  color: red;
+  border-radius: 10px;
+  padding: 3px;
+  margin-left: 10px;
+}
+
+.samplerInstructions__container {
+  padding: 20px;
+  align-items: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.samplerInstruments {
+  border: solid;
+  border-width: 12px;
+  background: aliceblue;
+  width: 200px;
+  height: 30px;
+  color: red;
+  border-radius: 10px;
+  padding: 3px;
+  margin-left: 10px;
+}
+
+.listItems {
+  font-size: large;
+}
+
+.mainStuff {
+  display: flex;
+  flex-direction: column;
 }
