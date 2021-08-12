@@ -9,7 +9,44 @@
   font-size: x-large;
   border-radius: 20px;
   flex: 1;
+  display: none;
 }
+
+.display__directions:hover > .instructions {
+  display: block;
+}
+.display__directions:hover {
+  color: #d3f0f2;
+  border-bottom: none;
+}
+
+.display__directions {
+  border-bottom: solid black;
+}
+
+.page__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page__title > h3 {
+  border: solid;
+  background-color: #000;
+  color: red;
+  padding: 10px;
+  font-size: xx-large;
+}
+
+.display__name {
+  font-size: x-large;
+  color: red;
+}
+
+// .display__directions:hover > .instructions {
+//   display: block;
+//   cursor: pointer;
+// }
 
 header {
   margin-bottom: 100px;
