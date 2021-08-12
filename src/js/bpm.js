@@ -78,13 +78,10 @@ export let loopKick = getPlay[0].addEventListener('click', () => {
 
         //// ACCESSING HTML ELEMENTS
         const kickRow = document.getElementsByClassName("kick__bar__container")[0];
-        // const snareRow = document.getElementsByClassName("snare__bar__container")[0].children;
-        // const hihatRow = document.getElementsByClassName("hihat__bar__container")[0].children;
-        // const clapRow = document.getElementsByClassName("clap__bar__container")[0].children;
 
         //CREATING INSTRUMENTS
         const kick = new Tone.MembraneSynth().toDestination();
-        //--//
+
         const snareInstrument  = new Tone.Sampler({
             "c2" : snare
         }).toDestination()

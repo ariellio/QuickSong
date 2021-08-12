@@ -23,7 +23,7 @@ searchButton.addEventListener('click', () => {
 
 pauseAndPlay.addEventListener('click', () => {
     if (window.someVar.playing()) {
-        return window.someVar.stop()
+        return window.someVar.stop() 
     } else if (!window.someVar.playing()) {
         return window.someVar.play()
     }
