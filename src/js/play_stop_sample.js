@@ -13,20 +13,31 @@ searchButton.addEventListener('click', () => {
             chosenInstrument = instrument.value
         }
     })
-   
     fetchSong(chosenInstrument)
     .then(playTrack => {
         playTrack.stop()
         playTrack.play()
+        // playTrack.play()
     })
+    
 })
 
 pauseAndPlay.addEventListener('click', () => {
+    if (pauseAndPlay.children[0].classList.value === "fa fa-stop") {
+        pauseAndPlay.children[0].classList = "fa fa-play"
+    } else {
+        pauseAndPlay.children[0].classList = "fa fa-stop"
+    }
+
     if (window.someVar.playing()) {
+        pauseAndPlay.children[0].classList = "fa fa-play"
+        pauseAndPlay.children[0].style.color = "blue"
         return window.someVar.stop() 
     } else if (!window.someVar.playing()) {
+        pauseAndPlay.children[0].classList = "fa fa-stop"
+        pauseAndPlay.children[0].style.color = "#d69393"
         return window.someVar.play()
-    }
+    } 
 })
 
 

@@ -1,5 +1,4 @@
 import * as Tone from 'tone';
-import {song} from './instruments.js';
 import snare from '../../dist/assets/sounds/snare-chop_C_major.wav';
 import hihat from '../../dist/assets/sounds/hi-hat-africa_C_minor.wav';
 import clap from '../../dist/assets/sounds/dry-short-clap.wav';
