@@ -28,9 +28,9 @@ const changeDataSets = (instrument) => {
     })
 }
 
-kickDiv.forEach(singleKick, () => (
-    changeDataSets(singleKick)
-))
+// kickDiv.forEach(singleKick, () => (
+//     changeDataSets(singleKick)
+// ))
 
 // kickDiv.forEach(singleKick => {
 //     singleKick.addEventListener('click', () => {
