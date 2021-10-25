@@ -15,18 +15,34 @@ const kickDiv = document.getElementsByClassName("kick__bar");
 const snareDiv = document.getElementsByClassName("snare__bar");
 const hihatDiv = document.getElementsByClassName("hihat__bar");
 const clapDiv = document.getElementsByClassName("clap__bar");
-// console.log(kickD)
-kickDiv.forEach(singleKick => {
-    singleKick.addEventListener('click', () => {
-        if (singleKick.dataset.active === "true") {
-            singleKick.dataset.active = "false"
-            singleKick.style.backgroundColor = "#202020"
-        } else if (singleKick.dataset.active === "false"){
-            singleKick.dataset.active = "true"
-            singleKick.style.backgroundColor = "red"
+
+const changeDataSets = (instrument) => {
+    instrument.addEventListener('click', () => {
+        if (instrument.dataset.active === "true") {
+            instrument.dataset.active = "false"
+            instrument.style.backgroundColor = "#202020"
+        } else if (instrument.dataset.active === "false") {
+            instrument.dataset.active = "true"
+            instrument.style.backgroundColor = "red"
         }
     })
-})
+}
+
+kickDiv.forEach(singleKick, () => (
+    changeDataSets(singleKick)
+))
+
+// kickDiv.forEach(singleKick => {
+//     singleKick.addEventListener('click', () => {
+//         if (singleKick.dataset.active === "true") {
+//             singleKick.dataset.active = "false"
+//             singleKick.style.backgroundColor = "#202020"
+//         } else if (singleKick.dataset.active === "false"){
+//             singleKick.dataset.active = "true"
+//             singleKick.style.backgroundColor = "red"
+//         }
+//     })
+// })
 snareDiv.forEach(singleSnare => {
     singleSnare.addEventListener('click', () => {
         if (singleSnare.dataset.active === "true") {
