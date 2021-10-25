@@ -29,7 +29,6 @@ const changeDrumInstrumentColor = (instrument) => {
     })
 }
 
-
 kickDiv.forEach(singleKick => {
     return changeDrumInstrumentColor(singleKick)
 })
@@ -42,56 +41,6 @@ hihatDiv.forEach(singleHihat => {
 clapDiv.forEach(singleClap => {
     return changeDrumInstrumentColor(singleClap)
 })
-
-// kickDiv.forEach(singleKick => {
-//     singleKick.addEventListener('click', () => {
-//         if (singleKick.dataset.active === "true") {
-//             singleKick.dataset.active = "false"
-//             singleKick.style.backgroundColor = "#202020"
-//         } else if (singleKick.dataset.active === "false"){
-//             singleKick.dataset.active = "true"
-//             singleKick.style.backgroundColor = "red"
-//         }
-//     })
-// })
-// snareDiv.forEach(singleSnare => {
-//     singleSnare.addEventListener('click', () => {
-//         if (singleSnare.dataset.active === "true") {
-//             singleSnare.dataset.active = "false"
-//             singleSnare.style.backgroundColor = "#202020"
-//         } else if (singleSnare.dataset.active === "false"){
-//             singleSnare.dataset.active = "true"
-//             singleSnare.style.backgroundColor = "red"
-//         }
-
-//     })
-// })
-// hihatDiv.forEach(singleHihat => {
-//     singleHihat.addEventListener('click', () => {
-//         if (singleHihat.dataset.active === "true") {
-//             singleHihat.dataset.active = "false"
-//             singleHihat.style.backgroundColor = "#202020"
-//         } else if (singleHihat.dataset.active === "false"){
-//             singleHihat.dataset.active = "true"
-//             singleHihat.style.backgroundColor = "red"
-//         }
-
-//     })
-// })
-
-// clapDiv.forEach(singleClap => {
-//     singleClap.addEventListener('click', () => {
-//         if (singleClap.dataset.active === "true") {
-//             singleClap.dataset.active = "false"
-//             singleClap.style.backgroundColor = "#202020"
-//         } else if (singleClap.dataset.active === "false"){
-//             singleClap.dataset.active = "true"
-//             singleClap.style.backgroundColor = "red"
-//         }
-
-//     })
-// })
-
 
 //PLAY
 let getPlay = document.getElementsByClassName("play__button") 
@@ -133,63 +82,31 @@ export let loopKick = getPlay[0].addEventListener('click', () => {
             let beat = Tone.Transport.position.split(":")[1]
 
             // MAKING BORDER COLOR CHANGE
-                // KICK
+            const changeBorderColorofDrumInstruments = (instrumentDiv) => {
+                if (beat === instrumentDiv.id) {
+                    instrumentDiv.style.borderColor = "yellow"
+                } else if (beat !== instrumentDiv.id) {
+                    instrumentDiv.style.borderColor = "#202020"
+                }
+                if (beat === instrumentDiv.id && instrumentDiv.dataset.active === "true") {
+                    instrumentDiv.style.backgroundColor = "#7c0000"
+                } else if (beat !== instrumentDiv.id && instrumentDiv.dataset.active === "true") {
+                    instrumentDiv.style.backgroundColor = "red"
+                }
+            }
+
             kickDiv.forEach(singleKickDiv => {
-                if (beat === singleKickDiv.id ) {
-                    singleKickDiv.style.borderColor = "yellow"
-                } else if (beat !== singleKickDiv.id) {
-                    singleKickDiv.style.borderColor = "#202020"
-                } 
-
-                if (beat === singleKickDiv.id && singleKickDiv.dataset.active === "true") {
-                    singleKickDiv.style.backgroundColor = "#7c0000"
-                } else if (beat !== singleKickDiv.id && singleKickDiv.dataset.active === "true") {
-                    singleKickDiv.style.backgroundColor = "red" 
-                }
+                return changeBorderColorofDrumInstruments(singleKickDiv)
             })
-                // SNARE
             snareDiv.forEach(singleSnareDiv => {
-                if (beat === singleSnareDiv.id) {
-                    singleSnareDiv.style.borderColor = "yellow"
-                } else if (beat !== singleSnareDiv.id) {
-                    singleSnareDiv.style.borderColor = "#202020"
-                }
-
-                if (beat === singleSnareDiv.id && singleSnareDiv.dataset.active === "true") {
-                    singleSnareDiv.style.backgroundColor = "#7c0000"
-                } else if (beat !== singleSnareDiv.id && singleSnareDiv.dataset.active === "true") {
-                    singleSnareDiv.style.backgroundColor = "red" 
-                }
+                return changeBorderColorofDrumInstruments(singleSnareDiv)
             })
-                
-                // HIHAT
-                hihatDiv.forEach(singleHihatDiv => {
-                    if (beat === singleHihatDiv.id) {
-                        singleHihatDiv.style.borderColor = "yellow"
-                    } else if (beat !== singleHihatDiv.id) {
-                        singleHihatDiv.style.borderColor = "#202020"
-                    }
-
-                    if (beat === singleHihatDiv.id && singleHihatDiv.dataset.active === "true") {
-                        singleHihatDiv.style.backgroundColor = "#7c0000"
-                    } else if (beat !== singleHihatDiv.id && singleHihatDiv.dataset.active === "true") {
-                        singleHihatDiv.style.backgroundColor = "red" 
-                    }
-                })
-                // CLAP
-                clapDiv.forEach(singleClapDiv => {
-                    if (beat === singleClapDiv.id) {
-                        singleClapDiv.style.borderColor = "yellow"
-                    } else if (beat !== singleClapDiv.id) {
-                        singleClapDiv.style.borderColor = "#202020"
-                    }
-
-                    if (beat === singleClapDiv.id && singleClapDiv.dataset.active === "true") {
-                        singleClapDiv.style.backgroundColor = "#7c0000"
-                    } else if (beat !== singleClapDiv.id && singleClapDiv.dataset.active === "true") {
-                        singleClapDiv.style.backgroundColor = "red" 
-                    }
-                })
+            hihatDiv.forEach(singleHihatDiv => {
+                return changeBorderColorofDrumInstruments(singleHihatDiv)
+            })
+            clapDiv.forEach(singleClapDiv => {
+                return changeBorderColorofDrumInstruments(singleClapDiv)
+            })
 
             // PLAY KICK
             kickDiv.forEach(singleKickDiv => {
