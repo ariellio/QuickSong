@@ -39,11 +39,3 @@ pauseAndPlay.addEventListener('click', () => {
         return window.someVar.play()
     } 
 })
-
-
-// pauseAndPlay.addEventListener('click', () => {
-//    console.log("hello")
-// })
-
-
-

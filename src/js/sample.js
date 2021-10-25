@@ -25,11 +25,6 @@ const fetchSong = async (instrument, bpm) => {
                     resultsArray.push(result)
                 })
         } 
-
-        // if (result.tags.includes(`${instrument}`)) {
-        //     resultsArray.push(result)
-        // }
-        
     })
     const randomElement = resultsArray[Math.floor(Math.random() * resultsArray.length)]
     const resultId = randomElement.id
@@ -57,6 +52,3 @@ const fetchSong = async (instrument, bpm) => {
 }
 
 export default fetchSong;
-// export default someVar;
-
-
