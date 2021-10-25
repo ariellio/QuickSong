@@ -2,7 +2,7 @@ import * as Tone from 'tone';
 import snare from '../../dist/assets/sounds/snare-chop_C_major.wav';
 import hihat from '../../dist/assets/sounds/hi-hat-africa_C_minor.wav';
 import clap from '../../dist/assets/sounds/dry-short-clap.wav';
-import { Time } from 'tone';
+import { debug, Time } from 'tone';
 
 
 
@@ -17,9 +17,8 @@ const hihatDiv = document.getElementsByClassName("hihat__bar");
 const clapDiv = document.getElementsByClassName("clap__bar");
 
 
-const changeDataSets = (instrument) => {
+const changeDrumInstrumentColor = (instrument) => {
     instrument.addEventListener('click', () => {
-        debugger
         if (instrument.dataset.active === "true") {
             instrument.dataset.active = "false"
             instrument.style.backgroundColor = "#202020"
@@ -30,10 +29,20 @@ const changeDataSets = (instrument) => {
     })
 }
 
-debugger
-kickDiv.forEach(singleKick, () => (
-    changeDataSets(singleKick)
-))
+
+kickDiv.forEach(singleKick => {
+    return changeDrumInstrumentColor(singleKick)
+})
+snareDiv.forEach(singleSnare => {
+    return changeDrumInstrumentColor(singleSnare)
+})
+hihatDiv.forEach(singleHihat => {
+    return changeDrumInstrumentColor(singleHihat)
+})
+clapDiv.forEach(singleClap => {
+    return changeDrumInstrumentColor(singleClap)
+})
+
 // kickDiv.forEach(singleKick => {
 //     singleKick.addEventListener('click', () => {
 //         if (singleKick.dataset.active === "true") {
@@ -45,43 +54,43 @@ kickDiv.forEach(singleKick, () => (
 //         }
 //     })
 // })
-snareDiv.forEach(singleSnare => {
-    singleSnare.addEventListener('click', () => {
-        if (singleSnare.dataset.active === "true") {
-            singleSnare.dataset.active = "false"
-            singleSnare.style.backgroundColor = "#202020"
-        } else if (singleSnare.dataset.active === "false"){
-            singleSnare.dataset.active = "true"
-            singleSnare.style.backgroundColor = "red"
-        }
+// snareDiv.forEach(singleSnare => {
+//     singleSnare.addEventListener('click', () => {
+//         if (singleSnare.dataset.active === "true") {
+//             singleSnare.dataset.active = "false"
+//             singleSnare.style.backgroundColor = "#202020"
+//         } else if (singleSnare.dataset.active === "false"){
+//             singleSnare.dataset.active = "true"
+//             singleSnare.style.backgroundColor = "red"
+//         }
 
-    })
-})
-hihatDiv.forEach(singleHihat => {
-    singleHihat.addEventListener('click', () => {
-        if (singleHihat.dataset.active === "true") {
-            singleHihat.dataset.active = "false"
-            singleHihat.style.backgroundColor = "#202020"
-        } else if (singleHihat.dataset.active === "false"){
-            singleHihat.dataset.active = "true"
-            singleHihat.style.backgroundColor = "red"
-        }
+//     })
+// })
+// hihatDiv.forEach(singleHihat => {
+//     singleHihat.addEventListener('click', () => {
+//         if (singleHihat.dataset.active === "true") {
+//             singleHihat.dataset.active = "false"
+//             singleHihat.style.backgroundColor = "#202020"
+//         } else if (singleHihat.dataset.active === "false"){
+//             singleHihat.dataset.active = "true"
+//             singleHihat.style.backgroundColor = "red"
+//         }
 
-    })
-})
+//     })
+// })
 
-clapDiv.forEach(singleClap => {
-    singleClap.addEventListener('click', () => {
-        if (singleClap.dataset.active === "true") {
-            singleClap.dataset.active = "false"
-            singleClap.style.backgroundColor = "#202020"
-        } else if (singleClap.dataset.active === "false"){
-            singleClap.dataset.active = "true"
-            singleClap.style.backgroundColor = "red"
-        }
+// clapDiv.forEach(singleClap => {
+//     singleClap.addEventListener('click', () => {
+//         if (singleClap.dataset.active === "true") {
+//             singleClap.dataset.active = "false"
+//             singleClap.style.backgroundColor = "#202020"
+//         } else if (singleClap.dataset.active === "false"){
+//             singleClap.dataset.active = "true"
+//             singleClap.style.backgroundColor = "red"
+//         }
 
-    })
-})
+//     })
+// })
 
 
 //PLAY
@@ -127,7 +136,7 @@ export let loopKick = getPlay[0].addEventListener('click', () => {
                 // KICK
             kickDiv.forEach(singleKickDiv => {
                 if (beat === singleKickDiv.id ) {
-                    singleKickDiv.style.borderColor = "purple"
+                    singleKickDiv.style.borderColor = "yellow"
                 } else if (beat !== singleKickDiv.id) {
                     singleKickDiv.style.borderColor = "#202020"
                 } 
