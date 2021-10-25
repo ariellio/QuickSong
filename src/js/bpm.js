@@ -125,7 +125,7 @@ export let loopKick = getPlay[0].addEventListener('click', () => {
                 // KICK
             kickDiv.forEach(singleKickDiv => {
                 if (beat === singleKickDiv.id ) {
-                    singleKickDiv.style.borderColor = "yellow"
+                    singleKickDiv.style.borderColor = "purple"
                 } else if (beat !== singleKickDiv.id) {
                     singleKickDiv.style.borderColor = "#202020"
                 } 
