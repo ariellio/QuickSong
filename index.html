@@ -4,58 +4,27 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="QuickSong" />
-    <meta property="og:image" content="https://fashionon-seed.s3.amazonaws.com/Screen+Shot+2021-10-25+at+10.03.43+AM.png" />
+    <meta name="title" property="og:title" content="QuickSong" />
+    <meta property="og:type" content="Single Page Web Application" />
+    <meta name="image" property="og:image" content="https://fashionon-seed.s3.amazonaws.com/Screen+Shot+2021-10-25+at+10.03.43+AM.png" />
     
     <meta
+      name="description"
       property="og:description"
       content="QuickSong is an interactive app where users can create custom drum patterns and can find samples to play to accompany it."
     />
+    <meta name="author" content="Ariel Davies" />
     <meta
       property="og:url"
-      content="https://programmer.github.io/project_name"
+      content="https://ariellio.github.io/QuickSong/"
     />
+    
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico.png">
     <title>QuickSong</title>
 </head>
-
-<!-- <header>
-    <div class="instructions">
-            <li id="left__most__instruction"> <span>
-                <br>
-                Each pad plays one beat. Choose as many pads as you'd like. 
-                <br>
-                <br>
-                Adjust the speed of playback by changing the BPM. 
-                <br>
-                <br>
-                Stop and play playback by using the buttons in the right corner.
-            </span>
-            </li>
-
-        </div>
-        <div class="samplerInstructions__container">
-                <div class="samplerInstruments"> Samples </div>
-                <div class="listItems">
-                    <li id="right__most__instruction">
-                        <span>
-                            Pick Instrument type
-                            <br>
-                            Pick BPM
-                            <br>
-                            Generate a sample by clicking Shuffle
-                            <br>
-                            Pause and play the sample by clicking play
-                        </span>
-                        <br>
-                    </li>
-                </div>
-        </div> 
-    </div>
-</header> -->
 <body>
     <div class="mainStuff">
         <div>
@@ -100,14 +69,12 @@
                 </button>
             </div>
         </div>
-
         <div class="drums__container">
             <div class="kick">
                 <div class="title">
                     <div class="instrumentTitle">
                         Kick
                     </div>
-                    <!-- <img id="kick__image" class="instrument__sound" src="https://icon-library.com/images/drum-icon/drum-icon-17.jpg" height="60px" alt=""> -->
                 </div>
                 <div class="kick__bar__container">
                     <div class="kick__bar" id="0" data-active="false"> </div>
@@ -155,7 +122,6 @@
                     <div class="clap__bar" id="3" data-active="false"> </div>
                 </div>
             </div>
-
             <div class="sample__container">
                 <div class="controls__container">
                     <div class="search__container">
@@ -180,36 +146,24 @@
                         <img id="down" />
                     </div>     
                 </div>
-                    <!-- <div class="spaceFiller">
-                        filled
-                    </div> -->
                     <div class="sampleButtons">
                         <div class="submit__search">
-                            <!-- <label>
-                                Generate a sample
-                            </label> -->
                             <button class="search__button">
                                 Shuffle
                             </button>
                         </div>
                         <div class="play__sample__container">
-                            <!-- <label>
-                                Pause and play
-                            </label> -->
                             <button data-soundInfo="" class="pause__sample">
                                 <div class="fa fa-stop"></div>
                             </button>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="audio__playing">
-                </div> -->
                 <p>
                     Have Fun
                 </p>
             </div>
         </div>
-      
     </div>
     </div>
     <script src="howler.min.js"></script>
