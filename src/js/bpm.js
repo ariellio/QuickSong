@@ -30,6 +30,7 @@ const changeDataSets = (instrument) => {
     })
 }
 
+debugger
 kickDiv.forEach(singleKick, () => (
     changeDataSets(singleKick)
 ))
