@@ -16,8 +16,10 @@ const snareDiv = document.getElementsByClassName("snare__bar");
 const hihatDiv = document.getElementsByClassName("hihat__bar");
 const clapDiv = document.getElementsByClassName("clap__bar");
 
+
 const changeDataSets = (instrument) => {
     instrument.addEventListener('click', () => {
+        debugger
         if (instrument.dataset.active === "true") {
             instrument.dataset.active = "false"
             instrument.style.backgroundColor = "#202020"
@@ -28,10 +30,9 @@ const changeDataSets = (instrument) => {
     })
 }
 
-// kickDiv.forEach(singleKick, () => (
-//     changeDataSets(singleKick)
-// ))
-
+kickDiv.forEach(singleKick, () => (
+    changeDataSets(singleKick)
+))
 // kickDiv.forEach(singleKick => {
 //     singleKick.addEventListener('click', () => {
 //         if (singleKick.dataset.active === "true") {
