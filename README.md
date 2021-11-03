@@ -4,7 +4,7 @@
 
 QuickSong is an interactive app where users can create custom drum patterns and can find samples to play to accompany it.
 
-<img src="dist/assets/mainpage.png" alt="">
+<img src="dist/assets/mainpage.png" alt="main page image">
 
 ## Technologies
 
