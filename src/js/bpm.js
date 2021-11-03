@@ -60,11 +60,10 @@ export let loopKick = getPlay[0].addEventListener('click', () => {
         const snareInstrument  = new Tone.Sampler({
             "c2" : snare
         }).toDestination()
-        //--//
+
         const hihatInstrument  = new Tone.Sampler({
             "c2" : hihat
         }).toDestination()
-        //--//
         const clapInstrument  = new Tone.Sampler({
             "c2" : clap
         }).toDestination()

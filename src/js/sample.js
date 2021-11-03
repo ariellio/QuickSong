@@ -37,7 +37,6 @@ const fetchSong = async (instrument, bpm) => {
     if (Object.values(window.someVar).length  > 0) {
         window.someVar.stop();
         window.someVar.unload();
-        // window.someVar = null;
     }
   
     var sound = new Howl({
