@@ -17,7 +17,6 @@ searchButton.addEventListener('click', () => {
     .then(playTrack => {
         playTrack.stop()
         playTrack.play()
-        // playTrack.play()
     })
     
 })
