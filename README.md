@@ -27,7 +27,7 @@ QuickSong is an interactive app where users can create custom drum patterns and 
      This is where I used the built in Transport class from the Tone.js library to schedule repeated playback of time. The time is passed into a repeat function which I'll go into further next. The second argument being passed into scheduleRepeat represents the pattern it'll be played in so "4n" stands for 4 notes.
 
 2)  <img src="dist/assets/codesnip2.png" >
-    Repeat is taking in time here. I've defined a variable caled beat which take uses the built in method from Transport called 'position' which runs in a timed loop according to the current tempo. I am splitting the position becasue the position contains different numbers held together by ':'. The number that I need is at position 1 so that is what I key into.
+    Repeat is taking in time here. I've defined a variable called beat which take uses the built in method from Transport called 'position' which runs in a timed loop according to the current tempo. I am splitting the position becasue the position contains different numbers held together by ':'. The number that I need is at position 1 so that is what I key into.
 
 3)  <img src="dist/assets/codesnip3.png" >
      This loop triggers the playback of the kick. It is chcking if the current div from the DOM has a dataset that is set to "true" and if the current beat which we accessed up above equals the id of the current pad. So if beat 2 equals pad 2. We are also checking if the state of our web audio API is not running because we don't want to play duplicate kicks on top of eachother. Then if these conditions are met we will play the kick pasing in the key to play it in, the length to play it, and the time at which to play it.
